@@ -32,8 +32,8 @@ body {
   font-size: $body-font-size;
   line-height: 1.5em;
   background: url('../images/bg-stars.svg');
-  background-color: $color-very-dark-mostly-black-blue;
-  // background-repeat: no-repeat;
+  background-color: $color-very-dark-blue;
+  max-height: 100vh;
 }
 
 body * + * {
@@ -60,4 +60,117 @@ a:active, a:focus {
 button:focus,
 input:focus {
   outline: none;
+}
+
+.container {
+  padding: 6rem 2rem;
+  min-height: 100vh;
+}
+
+.main-content {
+  height: 90vh;
+
+  &__heading {
+    text-align: center;
+    text-transform: uppercase;
+    color: $color-white;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    line-height: 1.2em;
+  }
+  &__countdown-wrapper {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 4rem;
+  }
+}
+
+.countdown-item + .countdown-item {
+  margin-top: 0;
+}
+
+.countdown-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 25%;
+
+  &__cell {
+    font-size: 2rem;
+    width: 100%;
+    text-align: center;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__cell-text {
+    position: absolute;
+    color: $color-soft-red;
+  }
+
+  &__backdrop {
+    background-color: $color-dark-desaturated-blue;
+    height: 40px;
+    width: 70%;
+    margin-top: 0;
+    -webkit-box-shadow: 0px 9px 7px -1px rgba(25,26,36,1);
+    -moz-box-shadow: 0px 9px 7px -1px rgba(25,26,36,1);
+    box-shadow: 0px 9px 7px -1px rgba(25,26,36,1);
+  }
+
+  &__backdrop--top {
+    border-radius: 7px 7px 8px 8px;
+    border-bottom: 1px solid $color-very-dark-blue;
+  }
+
+  &__backdrop--down {
+    border-radius: 8px 8px 7px 7px;
+    border-top: 1px solid $color-dark-desaturated-blue;
+  }
+
+  &__label {
+    font-size: 0.65em;
+    text-transform: uppercase;
+    margin-top: 15px;
+    color: $color-grayish-blue;
+  }
+}
+
+footer {
+  background: url('../images/pattern-hills.svg');
+  position: fixed;
+  bottom: 0;
+  height: 8rem;
+  width: 100%;
+  text-align: center;
+  color: hsla(345, 95%, 68%, 0.6);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .social-links img {
+    margin-right: 2em;
+  }
+
+  .attribution {
+    font-size: 11px;
+    text-align: center;
+    padding: 0.8em;
+  }
+  .attribution a {
+    color: hsla(0, 0%, 100%, 0.6);
+  }
+
+  .attribution span {
+     display: block;
+  }
+
+  .attribution span + span {
+     margin-top: 0;
+  }
 }
