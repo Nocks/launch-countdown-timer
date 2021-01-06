@@ -96,7 +96,7 @@ input:focus {
 .countdown-item__backdrop {
   background-color: #343650;
   height: 40px;
-  width: 70%;
+  width: 85%;
   margin-top: 0;
   -webkit-box-shadow: 0px 9px 7px -1px #191a24;
   -moz-box-shadow: 0px 9px 7px -1px #191a24;
@@ -133,6 +133,10 @@ footer {
 footer .social-links img {
   margin-right: 2em;
 }
+footer .social-links__link:hover,
+footer .social-links__link:focus {
+  filter: invert(53%) sepia(20%) saturate(2712%) hue-rotate(307deg) brightness(100%) contrast(97%);
+}
 footer .attribution {
   font-size: 11px;
   text-align: center;
@@ -141,11 +145,52 @@ footer .attribution {
 footer .attribution a {
   color: rgba(255, 255, 255, 0.6);
 }
+footer .attribution a:hover,
+footer .attribution a:active {
+  color: rgba(251, 96, 135, 0.6);
+}
 footer .attribution span {
   display: block;
 }
 footer .attribution span + span {
   margin-top: 0;
+}
+
+/*
+  ##Device = Desktops
+  ##Screen = 1281px to higher resolution desktops
+*/
+/*
+  ##Device = Laptops, Desktops
+  ##Screen = B/w 1025px to 1280px
+*/
+/*
+  ##Device = Tablets, Ipads (portrait)
+  ##Screen = B/w 768px to 1024px
+*/
+/*
+  ##Device = Tablets, Ipads (landscape)
+  ##Screen = B/w 768px to 1024px
+*/
+/*
+  ##Device = Low Resolution Tablets, Mobiles (Landscape)
+  ##Screen = B/w 481px to 767px
+*/
+/*
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
+@media (min-width: 320px) and (max-width: 480px) {
+  .container {
+    padding: 5em 0.8em;
+  }
+
+  .main-content__heading {
+    font-size: 1.4em;
+    padding-top: 2em;
+    padding-left: 0.8em;
+    padding-right: 0.8em;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */
