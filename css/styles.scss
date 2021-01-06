@@ -1,0 +1,60 @@
+// Primary Colors
+$color-grayish-blue: hsl(237, 18%, 59%);
+$color-soft-red: hsl(345, 95%, 68%);
+
+// Neutral Colors
+$color-white: hsl(0, 0%, 100%);
+$color-dark-desaturated-blue: hsl(236, 21%, 26%);
+$color-very-dark-blue: hsl(235, 16%, 14%);
+$color-very-dark-mostly-black-blue: hsl(234, 17%, 12%);
+
+// Typography
+$default-font: 'Red Hat Text', sans-serif;
+
+// Body copy
+$body-font-size: 0.875em; // 14px
+
+*,
+::before,
+::after {
+  box-sizing: inherit;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: $default-font;
+  font-size: $body-font-size;
+  line-height: 1.5em;
+}
+
+body * + * {
+  margin-top: 1.5em;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: $default-font;
+}
+
+a:link,
+a:visited,
+a:active {
+  text-decoration: none;
+  border: none;
+}
+
+a:active, a:focus {
+  outline: 0;
+  border: none;
+  -moz-outline-style: none;
+}
+
+button:focus,
+input:focus {
+  outline: none;
+}
