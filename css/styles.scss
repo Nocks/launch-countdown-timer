@@ -31,6 +31,9 @@ body {
   font-family: $default-font;
   font-size: $body-font-size;
   line-height: 1.5em;
+  background: url('../images/bg-stars.svg');
+  background-color: $color-very-dark-mostly-black-blue;
+  // background-repeat: no-repeat;
 }
 
 body * + * {
