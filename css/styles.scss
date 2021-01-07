@@ -33,7 +33,7 @@ body {
   line-height: 1.5em;
   background: url('../images/bg-stars.svg');
   background-color: $color-very-dark-blue;
-  max-height: 100vh;
+  min-height: 100vh;
 }
 
 body * + * {
@@ -226,7 +226,32 @@ footer {
 
 @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
 
-  //CSS
+  .container {
+    padding: 5em 10em;
+  }
+
+  .main-content {
+
+    &__heading {
+      font-size: 2.2em;
+      padding-top: 2em;
+      padding-left: 0.8em;
+      padding-right: 0.8em;
+    }
+  }
+
+  .countdown-item {
+
+    &__cell-text {
+      font-size: 2.5rem;
+    }
+    &__backdrop {
+      width: 70%;
+    }
+    &__label {
+      font-size: 0.8em
+    }
+  }
 
 }
 

@@ -17,7 +17,7 @@ body {
   line-height: 1.5em;
   background: url("../images/bg-stars.svg");
   background-color: #1e1f29;
-  max-height: 100vh;
+  min-height: 100vh;
 }
 
 body * + * {
@@ -172,6 +172,28 @@ footer .attribution span + span {
   ##Device = Tablets, Ipads (landscape)
   ##Screen = B/w 768px to 1024px
 */
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  .container {
+    padding: 5em 10em;
+  }
+
+  .main-content__heading {
+    font-size: 2.2em;
+    padding-top: 2em;
+    padding-left: 0.8em;
+    padding-right: 0.8em;
+  }
+
+  .countdown-item__cell-text {
+    font-size: 2.5rem;
+  }
+  .countdown-item__backdrop {
+    width: 70%;
+  }
+  .countdown-item__label {
+    font-size: 0.8em;
+  }
+}
 /*
   ##Device = Low Resolution Tablets, Mobiles (Landscape)
   ##Screen = B/w 481px to 767px
