@@ -6,9 +6,9 @@
 
 html,
 body {
-  height: 100%;
   margin: 0;
   padding: 0;
+  min-height: 100vh;
 }
 
 body {
@@ -17,7 +17,6 @@ body {
   line-height: 1.5em;
   background: url("../images/bg-stars.svg");
   background-color: #1e1f29;
-  min-height: 100vh;
 }
 
 body * + * {
@@ -47,12 +46,20 @@ input:focus {
 }
 
 .container {
-  padding: 6rem 2rem;
+  padding: 2rem;
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .main-content {
-  height: 90vh;
+  margin-top: 20vh;
+  margin-bottom: 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 80%;
 }
 .main-content__heading {
   text-align: center;
@@ -113,14 +120,13 @@ input:focus {
 .countdown-item__label {
   font-size: 0.65em;
   text-transform: uppercase;
+  letter-spacing: 0.25em;
   margin-top: 15px;
   color: #8486a9;
 }
 
 footer {
   background: url("../images/pattern-hills.svg");
-  position: fixed;
-  bottom: 0;
   height: 8rem;
   width: 100%;
   text-align: center;
@@ -143,11 +149,11 @@ footer .attribution {
   padding: 0.8em;
 }
 footer .attribution a {
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(251, 96, 135, 0.6);
 }
 footer .attribution a:hover,
 footer .attribution a:active {
-  color: rgba(251, 96, 135, 0.6);
+  color: rgba(255, 255, 255, 0.6);
 }
 footer .attribution span {
   display: block;
@@ -160,58 +166,163 @@ footer .attribution span + span {
   ##Device = Desktops
   ##Screen = 1281px to higher resolution desktops
 */
+@media (min-width: 1281px) {
+  .container {
+    padding-left: 16rem;
+    padding-right: 16rem;
+  }
+
+  .main-content__heading {
+    font-size: 2em;
+  }
+
+  .countdown-item__label {
+    font-size: 0.7em;
+  }
+  .countdown-item__cell-text {
+    font-size: 3.8rem;
+  }
+
+  footer {
+    padding-top: 3rem;
+  }
+}
 /*
   ##Device = Laptops, Desktops
   ##Screen = B/w 1025px to 1280px
 */
+@media (min-width: 1025px) and (max-width: 1280px) {
+  .container {
+    padding-left: 15rem;
+    padding-right: 15rem;
+  }
+
+  .main-content__heading {
+    font-size: 1.8em;
+  }
+
+  .countdown-item__label {
+    font-size: 0.7em;
+  }
+  .countdown-item__cell-text {
+    font-size: 3.6rem;
+  }
+
+  footer {
+    padding-top: 2rem;
+  }
+}
 /*
   ##Device = Tablets, Ipads (portrait)
   ##Screen = B/w 768px to 1024px
 */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .container {
+    padding-left: 6rem;
+    padding-right: 6rem;
+  }
+
+  .main-content__heading {
+    font-size: 1.3em;
+  }
+  .main-content__countdown-wrapper {
+    margin-top: 4rem;
+  }
+
+  .countdown-item__label {
+    font-size: 0.8em;
+  }
+  .countdown-item__backdrop {
+    width: 80%;
+  }
+  .countdown-item__cell-text {
+    font-size: 3.2rem;
+  }
+}
 /*
   ##Device = Tablets, Ipads (landscape)
   ##Screen = B/w 768px to 1024px
 */
 @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
   .container {
-    padding: 5em 10em;
+    padding-left: 13rem;
+    padding-right: 13rem;
   }
 
   .main-content__heading {
-    font-size: 2.2em;
-    padding-top: 2em;
-    padding-left: 0.8em;
-    padding-right: 0.8em;
+    font-size: 1.7em;
+  }
+  .main-content__countdown-wrapper {
+    margin-top: 5rem;
   }
 
-  .countdown-item__cell-text {
-    font-size: 2.5rem;
-  }
-  .countdown-item__backdrop {
-    width: 70%;
-  }
   .countdown-item__label {
     font-size: 0.8em;
+  }
+  .countdown-item__cell-text {
+    font-size: 3.2rem;
   }
 }
 /*
   ##Device = Low Resolution Tablets, Mobiles (Landscape)
   ##Screen = B/w 481px to 767px
 */
+@media (min-width: 481px) and (max-width: 767px) {
+  .container {
+    padding-left: 5rem;
+    padding-right: 5rem;
+  }
+
+  .main-content {
+    margin-top: 25vh;
+    margin-bottom: 10vh;
+  }
+  .main-content__heading {
+    font-size: 1.2em;
+  }
+
+  .countdown-item__label {
+    font-size: 0.8em;
+  }
+  .countdown-item__cell-text {
+    font-size: 3.2rem;
+  }
+
+  footer {
+    padding-top: 2rem;
+    background-position: right -10px top;
+  }
+  footer .social-links__link img {
+    width: 22px;
+    height: 22px;
+  }
+}
 /*
   ##Device = Most of the Smartphones Mobiles (Portrait)
   ##Screen = B/w 320px to 479px
 */
 @media (min-width: 320px) and (max-width: 480px) {
   .container {
-    padding: 5em 0.8em;
+    padding: 0.8em;
   }
 
+  .main-content {
+    margin-top: 25vh;
+    margin-bottom: 10vh;
+  }
   .main-content__heading {
-    font-size: 1.4em;
-    padding-top: 2em;
+    font-size: 1em;
     padding-left: 0.8em;
     padding-right: 0.8em;
+  }
+
+  footer {
+    padding-top: 2rem;
+    background-position: right -10px top;
+  }
+  footer .social-links__link img {
+    width: 22px;
+    height: 22px;
   }
 }
 

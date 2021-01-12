@@ -22,9 +22,9 @@ $body-font-size: 0.875em; // 14px
 
 html,
 body {
-  height: 100%;
   margin: 0;
   padding: 0;
+  min-height: 100vh;
 }
 
 body {
@@ -33,7 +33,6 @@ body {
   line-height: 1.5em;
   background: url('../images/bg-stars.svg');
   background-color: $color-very-dark-blue;
-  min-height: 100vh;
 }
 
 body * + * {
@@ -63,12 +62,20 @@ input:focus {
 }
 
 .container {
-  padding: 6rem 2rem;
+  padding: 2rem;
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .main-content {
-  height: 90vh;
+  margin-top: 20vh;
+  margin-bottom: 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 80%;
 
   &__heading {
     text-align: center;
@@ -135,6 +142,7 @@ input:focus {
   &__label {
     font-size: 0.65em;
     text-transform: uppercase;
+    letter-spacing: 0.25em;
     margin-top: 15px;
     color: $color-grayish-blue;
   }
@@ -142,8 +150,6 @@ input:focus {
 
 footer {
   background: url('../images/pattern-hills.svg');
-  position: fixed;
-  bottom: 0;
   height: 8rem;
   width: 100%;
   text-align: center;
@@ -168,12 +174,12 @@ footer {
     padding: 0.8em;
   }
   .attribution a {
-    color: hsla(0, 0%, 100%, 0.6);
+    color: hsla(345, 95%, 68%, 0.6);
   }
 
   .attribution a:hover,
   .attribution a:active {
-    color: hsla(345, 95%, 68%, 0.6);
+    color: hsla(0, 0%, 100%, 0.6);
   }
 
   .attribution span {
@@ -193,7 +199,30 @@ footer {
 
 @media (min-width: 1281px) {
 
-  //CSS
+  .container {
+    padding-left: 16rem;
+    padding-right: 16rem;
+  }
+
+  .main-content {
+
+    &__heading {
+      font-size: 2em;
+    }
+  }
+
+  .countdown-item {
+
+    &__label {
+      font-size: 0.7em
+    }
+    &__cell-text {
+      font-size: 3.8rem;
+    }
+  }
+  footer {
+    padding-top: 3rem;
+  }
 
 }
 
@@ -204,8 +233,30 @@ footer {
 
 @media (min-width: 1025px) and (max-width: 1280px) {
 
-  //CSS
+  .container {
+    padding-left: 15rem;
+    padding-right: 15rem;
+  }
 
+  .main-content {
+
+    &__heading {
+      font-size: 1.8em;
+    }
+  }
+
+  .countdown-item {
+
+    &__label {
+      font-size: 0.7em
+    }
+    &__cell-text {
+      font-size: 3.6rem;
+    }
+  }
+  footer {
+    padding-top: 2rem;
+  }
 }
 
 /*
@@ -215,8 +266,33 @@ footer {
 
 @media (min-width: 768px) and (max-width: 1024px) {
 
-  //CSS
+  .container {
+    padding-left: 6rem;
+    padding-right: 6rem;
+  }
 
+  .main-content {
+
+    &__heading {
+      font-size: 1.3em;
+    }
+    &__countdown-wrapper {
+      margin-top: 4rem;
+    }
+  }
+
+  .countdown-item {
+
+    &__label {
+      font-size: 0.8em
+    }
+    &__backdrop {
+      width: 80%;
+    }
+    &__cell-text {
+      font-size: 3.2rem;
+    }
+  }
 }
 
 /*
@@ -227,29 +303,27 @@ footer {
 @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
 
   .container {
-    padding: 5em 10em;
+    padding-left: 13rem;
+    padding-right: 13rem;
   }
 
   .main-content {
 
     &__heading {
-      font-size: 2.2em;
-      padding-top: 2em;
-      padding-left: 0.8em;
-      padding-right: 0.8em;
+      font-size: 1.7em;
+    }
+    &__countdown-wrapper {
+      margin-top: 5rem;
     }
   }
 
   .countdown-item {
 
-    &__cell-text {
-      font-size: 2.5rem;
-    }
-    &__backdrop {
-      width: 70%;
-    }
     &__label {
       font-size: 0.8em
+    }
+    &__cell-text {
+      font-size: 3.2rem;
     }
   }
 
@@ -262,7 +336,39 @@ footer {
 
 @media (min-width: 481px) and (max-width: 767px) {
 
-  //CSS
+  .container {
+    padding-left: 5rem;
+    padding-right: 5rem;
+  }
+
+  .main-content {
+    margin-top: 25vh;
+    margin-bottom: 10vh;
+
+    &__heading {
+      font-size: 1.2em;
+    }
+  }
+  .countdown-item {
+
+    &__label {
+      font-size: 0.8em
+    }
+    &__cell-text {
+      font-size: 3.2rem;
+    }
+  }
+  footer {
+    padding-top: 2rem;
+    background-position: right -10px top;
+
+    .social-links {
+      &__link img {
+        width: 22px;
+        height: 22px;
+      }
+    }
+  }
 
 }
 
@@ -274,17 +380,28 @@ footer {
 @media (min-width: 320px) and (max-width: 480px) {
 
   .container {
-    padding: 5em 0.8em;
+    padding: 0.8em;
   }
 
   .main-content {
+    margin-top: 25vh;
+    margin-bottom: 10vh;
 
     &__heading {
-      font-size: 1.4em;
-      padding-top: 2em;
+      font-size: 1em;
       padding-left: 0.8em;
       padding-right: 0.8em;
     }
   }
+  footer {
+    padding-top: 2rem;
+    background-position: right -10px top;
 
+    .social-links {
+      &__link img {
+        width: 22px;
+        height: 22px;
+      }
+    }
+  }
 }
